@@ -4,6 +4,7 @@ Vmob is CLI tool that cross compiles V written module for use in iOS/Android arc
 
 ## About 
 Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike Rust.
+
 Please note that ```vmob``` is in a really early stage of development.
 
 ## How does it work?
