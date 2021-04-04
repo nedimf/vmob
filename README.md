@@ -1,13 +1,13 @@
 # Vmob
-Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures trough C layer. <small>Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)</small>
+Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures through C layer. <small>Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)</small>
 
 
 ## About 
-Vmob is used to cross compile originally written V modules(lib) into iOS compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike Rust.
-Please note that ```vmob``` is in really early stage of development.
+Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike Rust.
+Please note that ```vmob``` is in a really early stage of development.
 
 ## How does it work?
-Vmob is pretty simple CLI app that works by translating V module to raw C code. C file is then cross compiled with ```gcc``` to supported architectures.
+Vmob is a pretty simple CLI app that works by translating the V module to raw C code. C file is then cross-compiled with ```gcc``` to supported architectures.
 
 Supported architectures:
 - iOS
@@ -24,7 +24,7 @@ Supported architectures:
 - OS: MacOS (because it relies on lipo and otool checks)
 - Tools: Installed Xcode
 ### Just download binary
-Easiest way is to just download binary
+The easiest way is to just download binary
 - ```curl ```
 
 ### Build vmob
@@ -47,16 +47,16 @@ Combine two different architectures arm64 & x86_64
 
 Xcode part: 
 
-Insert **.a** file into your Xcode project, and don't forget to add bridging header. Vmob can generate it for you. 
+Insert **.a** file into your Xcode project, and don't forget to add a bridging header. Vmob can generate it for you. 
 
 ```./vmob hgen lib/module/module``` import made module into your Xcode project, configure bridge header file and call V module from your iOS app
 
-For full tutorial how to use ```vmob``` look at [this]() sample project
+For a full tutorial on how to use ```vmob``` look at [this]() sample project
 
 ## vmob
 ```
 Usage: vmob [flags] [commands]
-Vmob is CLI tool that cross compiles V module for use in iOS/Android architectures trough C layer.
+Vmob is CLI tool that cross-compiles V module for use in iOS/Android architectures through C layer.
 
 Flags:
   -help                Prints help information.
