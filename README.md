@@ -33,7 +33,7 @@ You can build vmob from source using V.
 - ```v vmob.v```
 - Run: ```./vmob```
 
-## How to use
+## How to use vmob
 - locate v written module
 
 Build static library (.a) for arm64
