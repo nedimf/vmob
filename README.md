@@ -51,7 +51,7 @@ Insert **.a** file into your Xcode project, and don't forget to add bridging hea
 
 ```./vmob hgen lib/module/module``` import made module into your Xcode project, configure bridge header file and call V module from your iOS app
 
-For full tutorial how to use ```vmob`` look at [this]() sample project
+For full tutorial how to use ```vmob``` look at [this]() sample project
 
 ## vmob
 ```
