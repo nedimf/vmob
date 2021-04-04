@@ -23,7 +23,7 @@ Supported architectures:
 ### Requirments
 - OS: MacOS (because it relies on lipo and otool checks)
 - Tools: Installed Xcode
-### Just download binary
+### Download binary
 The easiest way is to just download binary
 - ```curl ```
 
@@ -33,7 +33,7 @@ You can build vmob from source using V.
 - ```v vmob.v```
 - Run: ```./vmob```
 
-## How to use vmob
+## How to use vmob?
 - locate v written module
 
 Build static library (.a) for arm64
