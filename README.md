@@ -1,4 +1,6 @@
 # Vmob
+![](https://github.com/nedimf/vmob/blob/main/.github/logo.png)
+
 Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures through C layer. <small>Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)</small>
 
 
