@@ -5,7 +5,7 @@ Android is still not supported, please refer to [support-android](https://github
 
 
 ## About 
-Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike [Rust](https://github.com/rust-lang/rust/issues/35968). For full explonation how vmob works read this [document].(https://github.com/nedimf/vmob/.github/docs/how_it_works_behind_scenes.md)
+Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike [Rust](https://github.com/rust-lang/rust/issues/35968). For full explonation how vmob works read this [document](https://github.com/nedimf/vmob/blob/main/.github/docs/how_it_works_behind_scenes.md).
 
 Please note that ```vmob``` is in a really early stage of development.
 
