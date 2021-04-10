@@ -20,7 +20,7 @@ To combine both builds into one, vmob provides ```combine``` method.
 ```combine``` wraps around already Apple built lipo tool and combines to libraries together.
 
 ### Graphic representation
- 
+![graphic-diagram](https://github.com/nedimf/vmob/blob/main/.github/docs/img/graphic-how-it-works.png)
 
 ### Android
 
