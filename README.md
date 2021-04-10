@@ -135,4 +135,8 @@ Commands:
   version              Prints version information.
 ```
 
-
+## Author
+- [@nedimf](https://twitter.com/nedimcodes)
+If you would like to support my work:
+<br>
+  <a href="https://www.buymeacoffee.com/nedimcodes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
