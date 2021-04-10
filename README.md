@@ -5,7 +5,7 @@ Android is still not supported, please refer to [support-android](https://github
 
 
 ## About 
-Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike Rust.
+Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike [Rust](https://github.com/rust-lang/rust/issues/35968).
 
 Please note that ```vmob``` is in a really early stage of development.
 
@@ -42,19 +42,20 @@ You can build vmob from source using V.
 - locate v written module
 
 Build static library (.a) for arm64
-- ```./vmob apple-ios-iphone -s true lib/module/module```
+- ```./vmob apple-ios-iphone -s false lib/module/module```
 
 Build static library (.a) for x86_64 simulator 
-- ```./vmob apple-ios-iphone -s true lib/module/module```
+- ```./vmob apple-ios-iphone -s false lib/module/module```
   
-Combine two different architectures arm64 & x86_64
+Combine two different architectures ```arm64``` & ```x86_64```
 - ```./vmob combine -o module-ios lib/module/module-arm64.a lib/module/module-x86-64.a```
 
+#### Implementation with Xcode
 Xcode part: 
 
 Insert **.a** file into your Xcode project, and don't forget to add a bridging header. Vmob can generate it for you. 
 
-```./vmob hgen lib/module/module``` import made module into your Xcode project, configure bridge header file and call V module from your iOS app
+```./vmob header-gen -a arm64 lib/module/module``` import made module into your Xcode project, configure bridge header file and call V module from your iOS app
 
 For a full tutorial on how to use ```vmob``` look at [this]() sample project
 
@@ -68,9 +69,10 @@ Flags:
   -version             Prints version information.
 
 Commands:
-  apple-ios-iphone     Build V module into arm64 static library
+  apple-ios-iphone     Build V module into arm64 static librvary
   apple-ios-simulator  Build V module into x86_64 static library
   combine              Combine two architectures into one by making it universal
+  header-gen           Generate header.h to be inserted in Xcode project
   help                 Prints help information.
   version              Prints version information.
 ```
