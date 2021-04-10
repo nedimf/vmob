@@ -1,11 +1,11 @@
 # Vmob
 
 Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures through C layer. 
-Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)
+Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/android-support.md)
 
 
 ## About 
-Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike [Rust](https://github.com/rust-lang/rust/issues/35968).
+Vmob is used to cross-compile originally written V modules(lib) into iOS-compatible .a files. Static library can be compiled with ```enabled-bitcode```, unlike [Rust](https://github.com/rust-lang/rust/issues/35968). For full explonation read this [doc](https://github.com/nedimf/vmob/how_it_works_behind_scenes.md)
 
 Please note that ```vmob``` is in a really early stage of development.
 
