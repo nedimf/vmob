@@ -39,6 +39,63 @@ You can build vmob from source using V.
 - Run: ```./vmob```
 
 ## How to use vmob?
+
+<details><summary><b>Step by step guide</b></summary>
+<p>
+
+## iOS
+1. Write your V module
+> Be sure to use [export: ] followed by module name
+```v
+module vex
+import math 
+
+[export: vex_absolute_value]
+pub fn vex_absolute_value(a f64) f64{
+	return math.abs(a)
+}
+
+fn init(){
+	println("Vex module has been called")
+}
+
+```
+2. Build static library (.a file) targeting iPhone (arm64) 
+   ```./vmob apple-ios-iphone -s false path/to/module```
+3. Build static library (.a file) targeting iOS Simulator (x86_64)
+   ```./vmob apple-ios-simulator -s false path/to/module```
+4. Combine two targets into universal target
+   ```./vmob combine -o modulename-ios path/to/module-arm64.a path/to/module-x86_64.a```
+5. Generate header file that you will use as bridge between your library and Xcode
+    ```./vmob header-gen -a arm64 path/to/module```
+
+### Xcode: 
+
+6. Open Xcode 
+7. Create new folder called ```your-ios-module-name```
+8. Drag and drop your universal ```modulename-ios.a``` and ```.h``` file 
+9. New File -> C -> Enable Bridging Header
+    - add line ```#include "modulename_header.h``` file
+10. Call method from your Swift code
+
+```swift
+     override func viewDidLoad() {
+        super.viewDidLoad()
+        println(vex_absolute_value(-1)) // 1
+    }
+```
+
+Have in mind this all this be automated in Xcode build script
+
+## Android
+
+```Not yet supported```
+<hr>
+</p>
+</details>
+<br>
+Fast version:
+
 - locate v written module
 
 Build static library (.a) for arm64
@@ -57,7 +114,8 @@ Insert **.a** file into your Xcode project, and don't forget to add a bridging h
 
 ```./vmob header-gen -a arm64 lib/module/module``` import made module into your Xcode project, configure bridge header file and call V module from your iOS app
 
-For a full tutorial on how to use ```vmob``` look at [this]() sample project
+For a full tutorial on how to use ```vmob``` look at [this](https://github.com/nedimf/vmob/blob/main/.github/docs/sample-how-to-use-it.md) sample project or click down on drop down menu.
+
 
 ## vmob
 ```
