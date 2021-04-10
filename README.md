@@ -1,7 +1,7 @@
 # Vmob
-![](https://github.com/nedimf/vmob/blob/main/.github/logo.png)
 
-Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures through C layer. <small>Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)</small>
+Vmob is CLI tool that cross compiles V written module for use in iOS/Android architectures through C layer. 
+Android is still not supported, please refer to [support-android](https://github.com/nedimf/vmob/docs/support-android.md)
 
 
 ## About 
@@ -15,12 +15,14 @@ Vmob is a pretty simple CLI app that works by translating the V module to raw C 
 Supported architectures:
 - iOS
   - iPhone arm64
-  - iOS Simulator (x86_64)
-- Android is **not supported yet, we are working to support it** see [support-android](https://github.com/nedimf/vmob/docs/support-android.md) to contribute
+  - iOS Simulator (x86_64)  
+- Android 
 	- Android aarch64-linux-android
 	- Android armv7-linux-androideabi
 	- Android i686-linux-android
 	- Android x86_64-linux-android
+
+>Android is **not supported yet, we are working to support it** see [support-android](https://github.com/nedimf/vmob/docs/support-android.md) to contribute
 
 ## Install 
 ### Requirments
@@ -28,7 +30,7 @@ Supported architectures:
 - Tools: Installed Xcode
 ### Download binary
 The easiest way is to just download binary
-- ```curl ```
+- ```curl https://github.com/nedimf/vmob/blob/main/vmob?raw=true --output vmob```
 
 ### Build vmob
 You can build vmob from source using V.
