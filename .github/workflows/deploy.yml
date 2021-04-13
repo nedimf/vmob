@@ -22,6 +22,9 @@ jobs:
         ./v symlink
     - name: Build example
       run: |
+        pwd
+        cd
+        cd  ${{ github.workspace }}/src
         v vmob.v
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.1.1
