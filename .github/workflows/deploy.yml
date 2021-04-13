@@ -16,7 +16,6 @@ jobs:
         export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
     - name: Download V
       run: |
-        tag=${GITHUB_REF##*/}
         wget https://github.com/vlang/v/releases/download/$tag/v_macos.zip
         unzip v_macos.zip
         cd v
