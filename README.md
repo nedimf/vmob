@@ -30,7 +30,7 @@ Supported architectures:
 - Tools: Installed Xcode
 ### Download binary
 The easiest way is to just download binary
-- ```curl https://github.com/nedimf/vmob/blob/main/vmob?raw=true --output vmob```
+- [binary](https://github.com/nedimf/vmob/blob/main/vmob?raw=true)
 
 ### Build vmob
 You can build vmob from source using V.
