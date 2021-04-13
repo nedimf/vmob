@@ -6,22 +6,20 @@ on:
 
 jobs:
   deploy: 
-    runs-on: macOS-latest
-    timeout-minutes: 5
+    runs-on: macos-latest
     steps:
-    - name: Install dependencies
+    - name: Checkout V
+      uses: actions/checkout@v2
+      with:
+        repository: vlang/v
+    - name: Checkout range
+      uses: actions/checkout@v2
+      with:
+        path: vlib/range
+    - name: Build V
       run: |
-        brew install freetype glfw openssl
-        # brew install sdl2 sdl2_ttf sdl2_mixer sdl2_image
-        export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
-    - name: Download V
+        make
+        ./v symlink
+    - name: Build example
       run: |
-        tag=$(curl -s https://api.github.com/repos/vlang/v/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \" | tr -d \,)
-        wget https://github.com/vlang/v/releases/download/$tag/v_macos.zip
-        unzip v_macos.zip
-        cd v
-        ./v -version
-    - name: Test V
-      run: |
-        cd v
-        ./v run examples/hello_world.v
+        v self
