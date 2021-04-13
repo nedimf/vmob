@@ -1,0 +1,27 @@
+name: Vmob Deploy
+
+on: 
+  push:
+    branches: [master]
+
+jobs:
+  deploy: 
+    runs-on: macOS-latest
+    timeout-minutes: 5
+    steps:
+    - name: Install dependencies
+      run: |
+        brew install freetype glfw openssl
+        # brew install sdl2 sdl2_ttf sdl2_mixer sdl2_image
+        export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
+    - name: Download V
+      run: |
+        tag=${GITHUB_REF##*/}
+        wget https://github.com/vlang/v/releases/download/$tag/v_macos.zip
+        unzip v_macos.zip
+        cd v
+        ./v -version
+    - name: Test V
+      run: |
+        cd v
+        ./v run examples/hello_world.v
