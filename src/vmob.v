@@ -81,6 +81,13 @@ fn main() {
 	cmd_c_header_gen.add_flag(Flag{
 		flag: .string
 		required: true
+		name: 'module-prefix'
+		abbrev: 'mp'
+		description: 'Provide architecture (arm64/x86_64)'
+	})
+	cmd_c_header_gen.add_flag(Flag{
+		flag: .string
+		required: true
 		name: 'arch'
 		abbrev: 'a'
 		description: 'Provide architecture (arm64/x86_64)'
@@ -205,15 +212,16 @@ fn apple_lipo(cmd Command) ? {
 // apple_header_gen simple header generation with C code
 fn apple_header_gen(cmd Command) ? {
 	arch := cmd.flags.get_string('arch') ?
+	module_prefix := cmd.flags.get_string('module-prefix') ?
 	module_name := cmd.args[0]
 	mut out := os.Result{
 		exit_code: 0
 		output: ''
 	}
 	if arch == 'arm64' {
-		out = os.execute('while read line;do echo "\$line";done<$module_name-arm64.c | grep  vex')
+		out = os.execute('while read line;do echo "\$line";done<$module_name-arm64.c | grep  $module_prefix')
 	} else {
-		out = os.execute('while read line;do echo "\$line";done<$module_name-x86_64.c | grep  vex')
+		out = os.execute('while read line;do echo "\$line";done<$module_name-x86_64.c | grep  $module_prefix')
 	}
 	mut module_methods := []string{}
 	txt_source := out.output
