@@ -24,7 +24,7 @@ fn init(){
 4. Combine two targets into universal target
    ```./vmob combine -o modulename-ios path/to/module-arm64.a path/to/module-x86_64.a```
 5. Generate header file that you will use as bridge between your library and Xcode
-    ```./vmob header-gen -a arm64 path/to/module```
+    ```./vmob header-gen -a arm64 -mp vex path/to/module```
 
 ### Xcode: 
 
